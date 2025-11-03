@@ -84,7 +84,7 @@ export async function sendToWhatsappInternal(phoneNumber: string, params: any): 
     }
 }
 
-export async function sendHsmMetaMesaageLink(phoneNumber: string, body: any): Promise<any> {
+export async function sendHsmMetaMessageLink(phoneNumber: string, body: any): Promise<any> {
     try {
         const phone_number_id = process.env.NWA_PHONE_NUMBER_ID!;
         const apiUrl = `https://nwc.nusa.net.id/api/messages?phone_number_id=${phone_number_id}&no_save=1`;
