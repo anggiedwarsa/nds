@@ -27,42 +27,6 @@ const upload = multer({ storage: storage });
 const PhoneNumber = require('libphonenumber-js');
 const nodemailer = require('nodemailer');
 
-// app.post("/upload", upload.single("file"), async (req, res) => {
-//   const file = req.file;
-// 
-//   if (!file) {
-//     return res.status(400).send({ error: "No file received" });
-//   }
-// 
-//   const fileStream = file.buffer;
-// 
-//   try {
-//     const auth = new google.auth.JWT(
-//       SERVICE_ACCOUNT_EMAIL,
-//       undefined,
-//       SERVICE_ACCOUNT_KEY.replace(/\\n/g, "\n"),
-//       ["https://www.googleapis.com/auth/drive"]
-//     );
-// 
-//     await auth.authorize();
-//     const drive = google.drive({ version: "v3", auth });
-//     const created = await drive.files.create({
-//       requestBody: {
-//         name: file.originalname,
-//         parents: [FOLDER_ID],
-//       },
-//       media: {
-//         mimeType: file.mimetype,
-//         body: Readable.from(fileStream)
-//       },
-//     });
-//     res.send({ uploadedFileId: created.data.id });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({ error: "File upload failed" });
-//   }
-// });
-
 async function sendEmail(
   toEmail: string,
   emailSubject: string,
@@ -1302,3 +1266,4 @@ async function getDataFromIdDocumentSignatureTrue(docId: string, branch: string)
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
